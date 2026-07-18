@@ -29,9 +29,9 @@ export default function IngestUpload({ setSelectedFile, handleUpload, selectedFi
     if (loading) {
       setStep(0);
       const timers = [
-        setTimeout(() => setStep(1), 600),
-        setTimeout(() => setStep(2), 2000),
-        setTimeout(() => setStep(3), 3500)
+        setTimeout(() => setStep(1), 1500),
+        setTimeout(() => setStep(2), 4000),
+        setTimeout(() => setStep(3), 8000)
       ];
       return () => timers.forEach(clearTimeout);
     } else if (status && status.toLowerCase().includes('success')) {
@@ -42,10 +42,10 @@ export default function IngestUpload({ setSelectedFile, handleUpload, selectedFi
   }, [loading, status]);
 
   const stepsText = [
-    "Uploading...",
-    "Extracting Text...",
-    "Creating Embeddings...",
-    "Ready"
+    "Uploading PDF to server...",
+    "Extracting text content...",
+    "Generating Vector Embeddings (this may take a minute)...",
+    "Saving chunks to Vector Database..."
   ];
 
   return (
