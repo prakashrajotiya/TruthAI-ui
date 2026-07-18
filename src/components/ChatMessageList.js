@@ -54,7 +54,9 @@ export default function ChatMessageList({ messages, hasData, onAdminClick, sugge
                   <div>{msg.text}</div>
                 ) : (
                   <div className={styles.modelContentFlex}>
-                    <ReactMarkdown className={styles.markdownContent}>{msg.text}</ReactMarkdown>
+                    <div className={styles.markdownContent}>
+                      <ReactMarkdown>{msg.text}</ReactMarkdown>
+                    </div>
 
                     {msg.confidence !== undefined && (
                       <div className={styles.confidenceSection}>
