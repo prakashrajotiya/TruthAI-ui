@@ -117,6 +117,15 @@ export default function ChatMessageList({ messages, hasData, onAdminClick, sugge
           ))
         )}
 
+        {messages.length > 0 && !hasData && (
+          <div className={styles.warningBox} style={{ marginTop: '2rem' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.warningIcon}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <h3 className={styles.warningTitle}>Warning: No Documents Uploaded</h3>
+            <p className={styles.warningText}>Your company data is not added yet. Please upload documents to start querying.</p>
+            <button onClick={onAdminClick} className="btn btn-primary" style={{ width: '100%' }}>Upload Document</button>
+          </div>
+        )}
+
         {loading && <ChatLoadingSteps />}
         <div ref={messagesEndRef} />
       </div>
