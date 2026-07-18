@@ -134,7 +134,7 @@
 
 .loginInput:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .statusMessage {
@@ -186,7 +186,7 @@
   padding: 1.5rem 2rem;
   border-radius: 1rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
 }
 
@@ -370,6 +370,7 @@
   box-shadow: var(--shadow-sm);
   margin-bottom: 1rem;
   border: 1px solid var(--border-color);
+  min-width: 72px;
 }
 
 .dropzoneTitle {
@@ -467,8 +468,13 @@
 }
 
 @keyframes slideProgress {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(200%);
+  }
 }
 
 .uploadSuccessBox {
