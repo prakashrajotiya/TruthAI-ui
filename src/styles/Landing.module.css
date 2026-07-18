@@ -1,0 +1,480 @@
+.wrapper {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.navbar {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logoText {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.themeBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.navLink {
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.heroSection {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-color);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.heroGradientText {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.ctaBtn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.ctaBtn:hover {
+  transform: scale(1.05);
+}
+
+.featuresSection {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Feature Card Wrapper */
+.featureCard {
+  background: var(--surface-hover);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.featureCardIcon {
+  padding: 0.5rem;
+  background: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.featureCardTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.featureCardContent {
+  flex: 1;
+}
+
+/* Card inner blocks */
+.cardInnerBlock {
+  padding: 1rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.cardInnerBlockFlex {
+  padding: 1rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardTitleSm {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.cardTitleXs {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.cardListItemSecondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cardBox {
+  padding: 0.5rem;
+  background: var(--surface-hover);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+}
+
+.flexCenterBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexCenterCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconBoxPrimary {
+  padding: 0.5rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+}
+
+.textCenterSm {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+.confidenceMeter {
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.confidenceLevel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.confidenceIcon {
+  font-size: 1.2rem;
+}
+
+.confidenceText {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.confidenceValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--success-color);
+}
+
+.uploadContainer {
+  padding: 1rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--primary-color);
+  text-align: center;
+}
+
+.uploadIcon {
+  margin: 0 auto 0.5rem;
+}
+
+.uploadTitle {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.uploadProgressWrapper {
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.uploadStatusText {
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.progressBarContainer {
+  height: 6px;
+  background: var(--surface-hover);
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.uploadSubStatus {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.6;
+}
+
+.voiceContainer {
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.voiceItem {
+  text-align: center;
+}
+
+.voiceMicOuter {
+  width: 48px;
+  height: 48px;
+  background: #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  color: white;
+}
+
+.voiceListenOuter {
+  width: 48px;
+  height: 48px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem;
+  color: var(--text-primary);
+}
+
+.voiceText {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.adminBtnSmall {
+  font-size: 0.85rem;
+  padding: 0.4rem;
+}
+
+.adminBtnDelete {
+  font-size: 0.85rem;
+  padding: 0.4rem;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  background: transparent;
+}
+
+.pwaContainer {
+  padding: 1rem;
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pwaPhone {
+  width: 60px;
+  height: 100px;
+  border: 2px solid var(--text-primary);
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pwaPhoneTop {
+  width: 100%;
+  height: 10px;
+  background: var(--surface-hover);
+  border-radius: 2px;
+  margin-bottom: auto;
+}
+
+.pwaPhoneScreen {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  border-radius: 4px;
+}
+
+.pwaTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.pwaDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.themeDemo {
+  display: flex;
+  height: 100px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.themeLight {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: 600;
+}
+
+.themeDark {
+  flex: 1;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.footerText {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

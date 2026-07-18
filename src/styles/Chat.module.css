@@ -1,0 +1,466 @@
+.chatWrapper {
+  height: 100vh;
+  background: var(--bg-color);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.chatHeader {
+  padding: 1rem 1.5rem;
+  background: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.adminBtn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Message List */
+.messageListWrapper {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.chatBackgroundTexture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  background-image: url(/chat-bg.png);
+  background-repeat: repeat;
+  background-size: 400px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.messageListInner {
+  width: 100%;
+  max-width: 1000px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.emptyState {
+  min-height: 50vh;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.warningBox {
+  text-align: center;
+  max-width: 450px;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.warningIcon {
+  margin: 0 auto 1rem;
+}
+
+.warningTitle {
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.warningText {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.welcomeIcon {
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.welcomeTitle {
+  margin-bottom: 0.5rem;
+}
+
+.welcomeText {
+  text-align: center;
+  max-width: 400px;
+}
+
+.suggestionsWrapper {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.suggestionsTitle {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.suggestionBtn {
+  text-align: left;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+}
+
+/* Individual Message */
+.messageRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.aiAvatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.userAvatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.messageBubble {
+  max-width: 85%;
+  padding: 1rem 1.25rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.6;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  white-space: pre-wrap;
+}
+
+.messageBubbleUser {
+  background: var(--user-msg-bg);
+  border: none;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: 0;
+}
+
+.messageBubbleModel {
+  background: var(--bot-msg-bg);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.modelContentFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.confidenceSection {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.confidenceBarFlex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.confidenceBarTrack {
+  flex: 1;
+  max-width: 200px;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confidenceBarFill {
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.confidencePercent {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sourceItem {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.relatedQuestionsTitle {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.relatedQuestionsFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.relatedQuestionBtn {
+  cursor: pointer;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.actionBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.actionBtn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--surface-color);
+}
+
+/* Chat Input Form */
+.inputFormWrapper {
+  padding: 1rem 1.5rem;
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.inputFormInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  height: 100%;
+  border-radius: var(--radius-full);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterText {
+  font-size: 0.9rem;
+}
+
+.formFlex {
+  flex: 1;
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inputField {
+  border-radius: var(--radius-full);
+  padding-right: 6.5rem;
+}
+
+.inputActions {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.micBtn {
+  border-radius: var(--radius-full);
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.micListening {
+  background: #ef4444 !important;
+  color: white !important;
+  animation: pulse 2s infinite !important;
+}
+
+.sendBtn {
+  border-radius: var(--radius-full);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Skeleton Loading Classes */
+.skeletonHeaderLogo {
+  width: 200px;
+  height: 32px;
+}
+
+.skeletonHeaderBtn {
+  width: 150px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.skeletonChatArea {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skeletonBotRow {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.skeletonBotAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+
+.skeletonBotBubble {
+  width: 70%;
+  height: 100px;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+}
+
+.skeletonUserRow {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  align-self: flex-end;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.skeletonUserBubble {
+  width: 50%;
+  height: 60px;
+  border-radius: 1rem;
+  border-bottom-right-radius: 0;
+}
+
+.skeletonUserAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.skeletonInputArea {
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skeletonInputField {
+  width: 100%;
+  max-width: 1000px;
+  height: 60px;
+  border-radius: 1rem;
+}
