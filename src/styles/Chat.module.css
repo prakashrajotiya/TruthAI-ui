@@ -464,3 +464,31 @@
   height: 60px;
   border-radius: 1rem;
 }
+
+/* Markdown Styles */
+.markdownContent {
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.markdownContent p {
+  margin-bottom: 1rem;
+}
+
+.markdownContent p:last-child {
+  margin-bottom: 0;
+}
+
+.markdownContent strong {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.markdownContent ul, .markdownContent ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.markdownContent li {
+  margin-bottom: 0.25rem;
+}

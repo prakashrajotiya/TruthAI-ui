@@ -70,16 +70,16 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
           <input
             ref={inputRef}
             className={`input ${styles.inputField}`}
-            placeholder="Ask a question about the company..."
+            placeholder={selectedDocs.length === 0 ? "Select a document to ask questions..." : "Ask a question about the company..."}
             value={input}
             onChange={e => setInput(e.target.value)}
-            disabled={loading || !hasData}
+            disabled={loading || !hasData || selectedDocs.length === 0}
           />
           <div className={styles.inputActions}>
             <button
               type="button"
               onClick={toggleListening}
-              disabled={!hasData || loading}
+              disabled={!hasData || loading || selectedDocs.length === 0}
               className={`btn ${isListening ? styles.micListening : 'btn-secondary'} ${styles.micBtn}`}
               title="Ask by voice"
             >
@@ -87,7 +87,7 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
             </button>
             <button
               type="submit"
-              disabled={!input.trim() || loading || !hasData}
+              disabled={!input.trim() || loading || !hasData || selectedDocs.length === 0}
               className={`btn btn-primary ${styles.sendBtn}`}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>

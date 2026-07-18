@@ -1,5 +1,6 @@
 import React from 'react';
 import ChatLoadingSteps from './ChatLoadingSteps';
+import ReactMarkdown from 'react-markdown';
 import styles from '../styles/Chat.module.css';
 
 export default function ChatMessageList({ messages, hasData, onAdminClick, suggestions, handleSend, loading, messagesEndRef }) {
@@ -53,7 +54,7 @@ export default function ChatMessageList({ messages, hasData, onAdminClick, sugge
                   <div>{msg.text}</div>
                 ) : (
                   <div className={styles.modelContentFlex}>
-                    <div>{msg.text}</div>
+                    <ReactMarkdown className={styles.markdownContent}>{msg.text}</ReactMarkdown>
 
                     {msg.confidence !== undefined && (
                       <div className={styles.confidenceSection}>
