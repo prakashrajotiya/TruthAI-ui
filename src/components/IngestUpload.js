@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from '../styles/Admin.module.css';
 
 export default function IngestUpload({ setSelectedFile, handleUpload, selectedFile, loading, status, setCurrentView }) {
@@ -168,9 +169,14 @@ export default function IngestUpload({ setSelectedFile, handleUpload, selectedFi
           {step === 4 && (
             <div className={`animate-fade-in ${styles.uploadSuccessBox}`}>
               <div className={styles.uploadSuccessText}>✓ {status}</div>
-              <button className={`btn btn-secondary ${styles.uploadAnotherBtn}`} onClick={() => { setSelectedFile(null); setStep(-1); }}>
-                Upload Another Document
-              </button>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+                <button className={`btn btn-secondary ${styles.uploadAnotherBtn}`} onClick={() => { setSelectedFile(null); setStep(-1); }} style={{ margin: 0, flex: 1 }}>
+                  Upload Another Document
+                </button>
+                <Link href="/chat" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
+                  Start Chat
+                </Link>
+              </div>
             </div>
           )}
         </div>
