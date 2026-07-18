@@ -106,14 +106,25 @@ a:hover {
   cursor: not-allowed;
 }
 
-.btn-primary {
+.btn-primary, a.btn-primary {
   background-color: var(--primary-color);
-  color: white;
+  color: white !important;
 }
 
-.btn-primary:hover:not(:disabled) {
+[data-theme='dark'] .btn-primary, 
+[data-theme='dark'] a.btn-primary {
+  color: #0f172a !important;
+}
+
+.btn-primary:hover:not(:disabled), a.btn-primary:hover:not(:disabled) {
   background-color: var(--primary-hover);
+  color: white !important;
   transform: translateY(-1px);
+}
+
+[data-theme='dark'] .btn-primary:hover:not(:disabled), 
+[data-theme='dark'] a.btn-primary:hover:not(:disabled) {
+  color: white !important;
 }
 
 .btn-secondary {

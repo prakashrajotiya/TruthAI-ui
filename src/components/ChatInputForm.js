@@ -8,7 +8,7 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
 
   const toggleListening = () => {
     if (typeof window === 'undefined') return;
-    
+
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
       alert('Voice recognition is not supported in this browser.');
@@ -37,7 +37,7 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
       };
       recognition.onerror = () => setIsListening(false);
       recognition.onend = () => setIsListening(false);
-      
+
       recognition.start();
     }
   };
@@ -45,9 +45,9 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
   return (
     <div className={styles.inputFormWrapper}>
       <div className={styles.inputFormInner}>
-        
+
         <div style={{ position: 'relative' }}>
-          <button 
+          <button
             type="button"
             className={`btn btn-secondary ${styles.filterBtn}`}
             onClick={() => setShowFilter(!showFilter)}
@@ -56,13 +56,13 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
             <span className={styles.filterText}>Filter</span>
           </button>
-          
-          <ChatDocumentFilter 
-            availableDocs={availableDocs} 
-            selectedDocs={selectedDocs} 
-            setSelectedDocs={setSelectedDocs} 
-            showFilter={showFilter} 
-            setShowFilter={setShowFilter} 
+
+          <ChatDocumentFilter
+            availableDocs={availableDocs}
+            selectedDocs={selectedDocs}
+            setSelectedDocs={setSelectedDocs}
+            showFilter={showFilter}
+            setShowFilter={setShowFilter}
           />
         </div>
 
@@ -70,7 +70,7 @@ export default function ChatInputForm({ inputRef, handleSend, input, setInput, l
           <input
             ref={inputRef}
             className={`input ${styles.inputField}`}
-            placeholder={selectedDocs.length === 0 ? "Select a document to ask questions..." : "Ask a question about the company..."}
+            placeholder={selectedDocs.length === 0 ? "Select a document to ask questions..." : "Ask a question..."}
             value={input}
             onChange={e => setInput(e.target.value)}
             disabled={loading || !hasData || selectedDocs.length === 0}
