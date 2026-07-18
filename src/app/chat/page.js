@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import ChatUI from '../../components/ChatUI';
 import styles from '../../styles/Chat.module.css';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/+$/, '');
 
 export default function ChatPage() {
   const [hasData, setHasData] = useState(true);
